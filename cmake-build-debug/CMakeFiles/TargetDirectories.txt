@@ -1,0 +1,5 @@
+/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/CMakeFiles/main.dir
+/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-build/CMakeFiles/edit_cache.dir
+/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-build/CMakeFiles/rebuild_cache.dir

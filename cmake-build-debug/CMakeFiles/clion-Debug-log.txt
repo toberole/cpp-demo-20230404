@@ -1,0 +1,5 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/zhouwei10/xiaoge/code/c/demo -B /Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug
+-- Using the single-header code from /Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-src/single_include/
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug
