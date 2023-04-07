@@ -1,0 +1,13 @@
+cmake-build*
+
+nlohmann_json
+
+.idea
+
+*.DS_Store
+.vscode
+logs
+.vs/
+out/
+CMakeSettings.json
+.vscode

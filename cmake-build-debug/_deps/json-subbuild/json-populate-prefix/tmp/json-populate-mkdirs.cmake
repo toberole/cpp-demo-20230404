@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-src"
-  "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-build"
-  "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix"
-  "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/tmp"
-  "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp"
-  "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src"
-  "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp"
+  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-src"
+  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-build"
+  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix"
+  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/tmp"
+  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp"
+  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src"
+  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

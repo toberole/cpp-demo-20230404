@@ -1,7 +1,7 @@
 # Distributed under the OSI-approved BSD 3-Clause License.  See accompanying
 # file Copyright.txt or https://cmake.org/licensing for details.
 
-cmake_minimum_required(VERSION 3.24.2)
+cmake_minimum_required(VERSION 3.25.2)
 
 # We name the project and the target for the ExternalProject_Add() call
 # to something that will highlight to the user what we are working on if
@@ -22,8 +22,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(json-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent" "GIT_PROGRESS" "TRUE" "GIT_SHALLOW" "TRUE" "GIT_TAG" "v3.11.2"
-                    SOURCE_DIR          "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-src"
-                    BINARY_DIR          "/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-build"
+                    SOURCE_DIR          "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-src"
+                    BINARY_DIR          "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

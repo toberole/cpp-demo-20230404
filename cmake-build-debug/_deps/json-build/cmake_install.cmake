@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-src
+# Install script for directory: /Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

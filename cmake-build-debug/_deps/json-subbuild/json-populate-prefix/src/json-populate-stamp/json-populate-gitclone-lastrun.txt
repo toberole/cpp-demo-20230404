@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake;-P;/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/tmp/json-populate-gitclone.cmake
-source_dir=/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps/json-src
-work_dir=/Users/zhouwei10/xiaoge/code/c/demo/cmake-build-debug/_deps
+command=/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake;-P;/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/tmp/json-populate-gitclone.cmake
+source_dir=/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps/json-src
+work_dir=/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake-build-debug/_deps
 repository=https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent
 remote=origin
 init_submodules=TRUE
