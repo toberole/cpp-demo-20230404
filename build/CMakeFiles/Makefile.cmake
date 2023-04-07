@@ -37,7 +37,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CMake.app/Contents/share/cmake-3.26/Modules/Platform/Darwin.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.26/Modules/Platform/UnixPaths.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake"
-  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/CMakeLists.txt"
+  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/CMakeLists.txt"
   "CMakeFiles/3.26.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.26.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.26.1/CMakeSystem.cmake"
@@ -45,7 +45,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "_deps/json-src/cmake/config.cmake.in"
   "_deps/json-src/cmake/nlohmann_jsonConfigVersion.cmake.in"
   "_deps/json-src/cmake/pkg-config.pc.in"
-  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/cmake/deps.cmake"
+  "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/cmake/deps.cmake"
   )
 
 # The corresponding makefile is:

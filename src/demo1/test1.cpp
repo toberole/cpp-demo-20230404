@@ -1,16 +1,17 @@
 #include "test1.h"
 #include <iostream>
 #include <list>
-#include <vector>
-#include <nlohmann/json.hpp>
 #include <mutex>
+#include <nlohmann/json.hpp>
 #include <thread>
+#include <vector>
 
-// NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(name, member1, member2, …) 将在要为其创建代码的类/结构的命名空间内定义。
-// NLOHMANN_DEFINE_TYPE_INTRUSIVE(name, member1, member2, …) 将在要为其创建代码的类/结构中定义。 该宏还可以访问私有成员。
-class Test
-{
-public:
+// NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(name, member1, member2, …)
+// 将在要为其创建代码的类/结构的命名空间内定义。
+// NLOHMANN_DEFINE_TYPE_INTRUSIVE(name, member1, member2, …)
+// 将在要为其创建代码的类/结构中定义。 该宏还可以访问私有成员。
+class Test {
+  public:
     int a;
     int b;
 
@@ -18,7 +19,7 @@ public:
 };
 
 // NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Test, a, b);
-#define GTEST_TEST_CLASS_NAME_(test_suite_name, test_name) \
+#define GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)                     \
     test_suite_name##_##test_name##_Test
 
 void GTEST_TEST_CLASS_NAME_(a, b)()
@@ -26,44 +27,43 @@ void GTEST_TEST_CLASS_NAME_(a, b)()
     std::cout << __func__ << std::endl;
 }
 
-// NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(name, member1, member2, …) 将在要为其创建代码的类/结构的命名空间内定义。
-// NLOHMANN_DEFINE_TYPE_INTRUSIVE(name, member1, member2, …) 将在要为其创建代码的类/结构中定义。 该宏还可以访问私有成员。
+// NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(name, member1, member2, …)
+// 将在要为其创建代码的类/结构的命名空间内定义。
+// NLOHMANN_DEFINE_TYPE_INTRUSIVE(name, member1, member2, …)
+// 将在要为其创建代码的类/结构中定义。 该宏还可以访问私有成员。
 void test1()
 {
     GTEST_TEST_CLASS_NAME_(a, b)
     ();
 
-    typedef enum
-    {
-        i1,
-        i2
-    } E;
+    typedef enum { i1, i2 } E;
     Test test;
-    test.a = 11;
-    test.b = 22;
+    test.a              = 11;
+    test.b              = 22;
     nlohmann::json json = test;
     std::cout << json.dump() << std::endl;
     json["a"] = 33;
-    test = json;
+    test      = json;
     std::cout << test.a << std::endl;
 
     std::vector<int> v;
     v.push_back(1);
     v.emplace_back(2);
-    std::mutex mutex;
+    std::mutex                  mutex;
     std::lock_guard<std::mutex> lock(mutex);
 }
 
 void test1_1()
 {
     thread_local int i = 0;
-    std::cout << "test1_1 " << std::this_thread::get_id() << ",i: " << i << std::endl;
+    std::cout << "test1_1 " << std::this_thread::get_id() << ",i: " << i
+              << std::endl;
     std::unordered_map<std::string, std::string> map;
 }
 
 void test2()
 {
-    std::mutex mutex;
+    std::mutex                   mutex;
     std::unique_lock<std::mutex> lock1(mutex);
     lock1.unlock();
     std::cout << "test2 ......" << std::endl;
@@ -78,13 +78,15 @@ void test2()
     th2.detach();
 }
 
-bool IsOdd(int i) { return i & 1; }
+bool IsOdd(int i)
+{
+    return i & 1;
+}
 
-void Print(const std::vector<int> &vec)
+void Print(const std::vector<int>& vec)
 {
     std::cout << "size: " << vec.size() << std::endl;
-    for (const auto &i : vec)
-    {
+    for (const auto& i : vec) {
         std::cout << i << ' ';
     }
     std::cout << std::endl;
@@ -103,6 +105,8 @@ int test3_1()
     // Removes all odd numbers.
     v.erase(std::remove_if(v.begin(), v.end(), IsOdd), v.end());
     Print(v);
+
+    return 0;
 }
 
 void test3()

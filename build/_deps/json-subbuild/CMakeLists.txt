@@ -22,8 +22,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(json-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent" "GIT_PROGRESS" "TRUE" "GIT_SHALLOW" "TRUE" "GIT_TAG" "v3.11.2"
-                    SOURCE_DIR          "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/build/_deps/json-src"
-                    BINARY_DIR          "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/build/_deps/json-build"
+                    SOURCE_DIR          "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/build/_deps/json-src"
+                    BINARY_DIR          "/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/build/_deps/json-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

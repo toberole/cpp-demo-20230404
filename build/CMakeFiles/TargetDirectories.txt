@@ -1,5 +1,5 @@
-/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/build/CMakeFiles/main.dir
-/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/build/CMakeFiles/edit_cache.dir
-/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/build/CMakeFiles/rebuild_cache.dir
-/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/build/_deps/json-build/CMakeFiles/edit_cache.dir
-/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/demo/build/_deps/json-build/CMakeFiles/rebuild_cache.dir
+/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/build/CMakeFiles/main.dir
+/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/build/CMakeFiles/edit_cache.dir
+/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/build/CMakeFiles/rebuild_cache.dir
+/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/build/_deps/json-build/CMakeFiles/edit_cache.dir
+/Users/zhouwei10/xiaoge/code/c/cpp-demo-20230404/build/_deps/json-build/CMakeFiles/rebuild_cache.dir

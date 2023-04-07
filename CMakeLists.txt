@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 include(./cmake/deps.cmake)
 
-include_directories(${CMAKE_CURRENT_LIST_DIR})
-include_directories(${CMAKE_CURRENT_LIST_DIR}/demo1)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/src)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/src/demo1)
 
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/src SRC_DIR)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/src/demo1 SRC_DIR)
