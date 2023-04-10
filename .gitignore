@@ -11,3 +11,5 @@ logs
 out/
 CMakeSettings.json
 .vscode
+build
+.idea

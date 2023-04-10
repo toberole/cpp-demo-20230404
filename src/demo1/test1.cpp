@@ -106,6 +106,9 @@ int test3_1()
     v.erase(std::remove_if(v.begin(), v.end(), IsOdd), v.end());
     Print(v);
 
+    Enum1 e = A;
+    std::cout << "Enum1: " << e << std::endl;
+
     return 0;
 }
 
