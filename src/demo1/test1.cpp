@@ -3,9 +3,9 @@
 #include <list>
 #include <mutex>
 #include <nlohmann/json.hpp>
+#include <random>
 #include <thread>
 #include <vector>
-#include <random>
 
 #define TAG_TEST "Test"
 
@@ -14,7 +14,7 @@
 // NLOHMANN_DEFINE_TYPE_INTRUSIVE(name, member1, member2, …)
 // 将在要为其创建代码的类/结构中定义。 该宏还可以访问私有成员。
 class Test {
-public:
+  public:
     int a;
     int b;
 
@@ -25,7 +25,8 @@ public:
 #define GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)                     \
     test_suite_name##_##test_name##_Test
 
-void GTEST_TEST_CLASS_NAME_(a, b)() {
+void GTEST_TEST_CLASS_NAME_(a, b)()
+{
     std::cout << __func__ << std::endl;
 }
 
@@ -33,38 +34,39 @@ void GTEST_TEST_CLASS_NAME_(a, b)() {
 // 将在要为其创建代码的类/结构的命名空间内定义。
 // NLOHMANN_DEFINE_TYPE_INTRUSIVE(name, member1, member2, …)
 // 将在要为其创建代码的类/结构中定义。 该宏还可以访问私有成员。
-void test1() {
+void test1()
+{
     GTEST_TEST_CLASS_NAME_(a, b)
-            ();
+    ();
 
-    typedef enum {
-        i1, i2
-    } E;
+    typedef enum { i1, i2 } E;
     Test test;
-    test.a = 11;
-    test.b = 22;
+    test.a              = 11;
+    test.b              = 22;
     nlohmann::json json = test;
     std::cout << json.dump() << std::endl;
     json["a"] = 33;
-    test = json;
+    test      = json;
     std::cout << test.a << std::endl;
 
     std::vector<int> v;
     v.push_back(1);
     v.emplace_back(2);
-    std::mutex mutex;
+    std::mutex                  mutex;
     std::lock_guard<std::mutex> lock(mutex);
 }
 
-void test1_1() {
+void test1_1()
+{
     thread_local int i = 0;
     std::cout << "test1_1 " << std::this_thread::get_id() << ",i: " << i
               << std::endl;
     std::unordered_map<std::string, std::string> map;
 }
 
-void test2() {
-    std::mutex mutex;
+void test2()
+{
+    std::mutex                   mutex;
     std::unique_lock<std::mutex> lock1(mutex);
     lock1.unlock();
     std::cout << "test2 ......" << std::endl;
@@ -79,19 +81,22 @@ void test2() {
     th2.detach();
 }
 
-bool IsOdd(int i) {
+bool IsOdd(int i)
+{
     return i & 1;
 }
 
-void Print(const std::vector<int> &vec) {
+void Print(const std::vector<int>& vec)
+{
     std::cout << "size: " << vec.size() << std::endl;
-    for (const auto &i: vec) {
+    for (const auto& i : vec) {
         std::cout << i << ' ';
     }
     std::cout << std::endl;
 }
 
-int test3_1() {
+int test3_1()
+{
     // Initializes a vector that holds numbers from 0-9.
     std::vector<int> v = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     Print(v);
@@ -111,23 +116,26 @@ int test3_1() {
 }
 
 class Student {
-private:
+  private:
     /* data */
-public:
+  public:
     Student(/* args */);
 
     ~Student();
 };
 
-Student::Student(/* args */) {
+Student::Student(/* args */)
+{
     std::cout << "Student ......" << std::endl;
 }
 
-Student::~Student() {
+Student::~Student()
+{
     std::cout << "~Student ......" << std::endl;
 }
 
-void test3() {
+void test3()
+{
     // std::cout << "Hello test3" << std::endl;
     // std::cout << std::acos(-1) << std::endl;
     // std::cout << (int64_t)1e6 << std::endl;
@@ -177,7 +185,8 @@ void test3() {
     // for (int n : q)
     //     std::cout << n << ' ';
 
-    typedef struct SS {
+    typedef struct SS
+    {
         int age = -1;
         // SS(int age)
         // {
@@ -190,12 +199,13 @@ void test3() {
     ss_q.push_back(SS{.age = 22});
     std::deque<SS> temp(ss_q.rbegin(), ss_q.rbegin() + 1);
 
-    for (auto &s: ss_q) {
+    for (auto& s : ss_q) {
         std::cout << s.age << std::endl;
     }
 }
 
-void test4() {
+void test4()
+{
     // std::unordered_map<int, int> m;
     // m[1] = 100;
     // std::cout << "m size: " << m.size() << std::endl;
@@ -257,30 +267,76 @@ void test4() {
     //     std::cout << n << std::endl;
     // }
 
-    typedef struct S1 {
-        int n;
-    } S1;
-    std::deque<S1> q1;
-    std::default_random_engine e;
-    e.seed(time(0));
-    for (size_t i = 0; i < 200; i++) {
-        auto nn = e() % 100;
-        q1.push_back(S1{.n = static_cast<int>(nn)});
-    }
-    std::sort(q1.begin(), q1.end(), [](const S1 ss, const S1 s2) -> bool {
-        if (ss.n < s2.n) {
-            return true;
-        } else if (ss.n > s2.n) {
-            return false;
-        } else {
-            return false;
-        }
-    });
+    // typedef struct S1 {
+    //     int n;
+    // } S1;
+    // std::deque<S1> q1;
+    // std::default_random_engine e;
+    // e.seed(time(0));
+    // for (size_t i = 0; i < 200; i++) {
+    //     auto nn = e() % 100;
+    //     q1.push_back(S1{.n = static_cast<int>(nn)});
+    // }
+    // std::sort(q1.begin(), q1.end(), [](const S1 ss, const S1 s2) -> bool {
+    //     if (ss.n < s2.n) {
+    //         return true;
+    //     } else if (ss.n > s2.n) {
+    //         return false;
+    //     } else {
+    //         return false;
+    //     }
+    // });
 
-//    for (auto s: q1) {
-//        std::cout << s.n << std::endl;
-//    }
+    //    for (auto s: q1) {
+    //        std::cout << s.n << std::endl;
+    //    }
 
-//    std::deque<int> d;
-//    auto i = d.back();
+    //    std::deque<int> d;
+    //    auto i = d.back();
+
+    // std::map<std::string, std::string> m = {"1", "2"};
+    // m["2"]                               = "123";
+
+    // const std::vector<int> v1{1, 2, 5, 5, 5, 9};
+    // const std::vector<int> v2{2, 5, 7};
+    // std::vector<int>       diff;
+    // std::set_difference(v1.begin(), v1.end(), v2.begin(), v2.end(),
+    //                     std::inserter(diff, diff.begin()));
+    // for (size_t i = 0; i < diff.size(); i++) {
+    //     std::cout << diff[i] << std::endl;
+    // }
+
+    // typedef struct Stu
+    // {
+    //   public:
+    //     int age;
+    //     Stu(int i) : age(i)
+    //     {
+    //         std::cout << "stu ......" << std::endl;
+    //     }
+
+    // } Stu;
+    // std::vector<Stu> v;
+    // Stu              s(1);
+    // v.push_back(s);
+
+    // s = 2;
+    // v.push_back(s);
+
+    // s = 5;
+    // v.push_back(s);
+
+    // s = 4;
+    // v.push_back(s);
+
+    // s = 3;
+    // v.push_back(s);
+    // std::cout << "@@@@@@@@@" << std::endl;
+    // std::sort(v.begin(), v.end(), [](const Stu s1, const Stu s2) -> bool {
+    //     return s1.age > s2.age;
+    // });
+
+    // for (auto s : v) {
+    //     std::cout << s.age << std::endl;
+    // }
 }
