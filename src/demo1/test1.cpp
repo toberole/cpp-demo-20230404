@@ -1,4 +1,5 @@
 #include "test1.h"
+#include <deque>
 #include <iostream>
 #include <list>
 #include <mutex>
@@ -6,7 +7,6 @@
 #include <random>
 #include <thread>
 #include <vector>
-
 #define TAG_TEST "Test"
 
 // NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(name, member1, member2, …)
@@ -187,7 +187,7 @@ void test3()
 
     typedef struct SS
     {
-        int age = -1;
+        int age;
         // SS(int age)
         // {
         //     this->age = age;
@@ -195,9 +195,11 @@ void test3()
         // }
     } SS;
     std::deque<SS> ss_q;
-    ss_q.push_back(SS{.age = 11});
-    ss_q.push_back(SS{.age = 22});
-    std::deque<SS> temp(ss_q.rbegin(), ss_q.rbegin() + 1);
+    SS             s1;
+    s1.age = 11;
+    ss_q.push_back(s1);
+    s1.age = 22;
+    ss_q.push_back(s1);
 
     for (auto& s : ss_q) {
         std::cout << s.age << std::endl;
@@ -339,4 +341,48 @@ void test4()
     // for (auto s : v) {
     //     std::cout << s.age << std::endl;
     // }
+
+    // std::deque<int> q;
+    // q.push_back(1);
+    // std::cout << q.size() << std::endl;
+    // std::deque<int> q1 = std::move(q);
+    // std::cout << q.size() << std::endl;
+    // std::cout << q1.size() << std::endl;
+
+    // std::deque<int> q;
+    // std::cout << "123" << std::endl;
+
+    // std::vector<int> v;
+    // v.push_back(123);
+
+    std::deque<int> d;
+    d.push_back(1);
+    d.push_back(3);
+    d.push_back(2);
+    d.back();
+    std::sort(d.begin(), d.end(), [=](int a, int b) -> bool { return a > b; });
+    // for (auto n : d) {
+    //     std::cout << "n: " << n << std::endl;
+    // }
+
+    // std::vector<int> v;
+    // std::cout << v[2] << std::endl;
+    // std::vector<int> v1;
+    // v.push_back(1);
+    // v.push_back(2);
+    // v1.resize(v.size());
+    // for (auto n : v1) {
+    //     std::cout << "n: " << n << std::endl;
+    // }
+
+    // std::vector<int> vv;
+    // vv.emplace_back(1);
+    // vv.emplace_back(2);
+    // for (auto i : vv) {
+    //     std::cout << i << std::endl;
+    // }
+
+    std::vector<int> v;
+    v.push_back(1);
+    std::cout << v[2] << std::endl;
 }
