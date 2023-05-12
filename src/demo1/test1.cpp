@@ -1,10 +1,18 @@
 #include "test1.h"
+#include <_types/_uint64_t.h>
+#include <algorithm>
+#include <atomic>
+#include <chrono>
+#include <cmath>
 #include <deque>
 #include <iostream>
 #include <list>
+#include <map>
 #include <mutex>
 #include <nlohmann/json.hpp>
 #include <random>
+#include <ratio>
+#include <sys/syslimits.h>
 #include <thread>
 #include <vector>
 #define TAG_TEST "Test"
@@ -13,8 +21,9 @@
 // 将在要为其创建代码的类/结构的命名空间内定义。
 // NLOHMANN_DEFINE_TYPE_INTRUSIVE(name, member1, member2, …)
 // 将在要为其创建代码的类/结构中定义。 该宏还可以访问私有成员。
-class Test {
-  public:
+class Test
+{
+public:
     int a;
     int b;
 
@@ -22,7 +31,7 @@ class Test {
 };
 
 // NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Test, a, b);
-#define GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)                     \
+#define GTEST_TEST_CLASS_NAME_(test_suite_name, test_name) \
     test_suite_name##_##test_name##_Test
 
 void GTEST_TEST_CLASS_NAME_(a, b)()
@@ -39,23 +48,30 @@ void test1()
     GTEST_TEST_CLASS_NAME_(a, b)
     ();
 
-    typedef enum { i1, i2 } E;
+    typedef enum {
+        i1,
+        i2
+    } E;
     Test test;
-    test.a              = 11;
-    test.b              = 22;
+    test.a = 11;
+    test.b = 22;
     nlohmann::json json = test;
     std::cout << json.dump() << std::endl;
     json["a"] = 33;
-    test      = json;
+    test = json;
     std::cout << test.a << std::endl;
 
     std::vector<int> v;
     v.push_back(1);
     v.emplace_back(2);
-    std::mutex                  mutex;
+    std::mutex mutex;
     std::lock_guard<std::mutex> lock(mutex);
 }
-
+double_t two_decimals(double_t d, int n)
+{
+    uint64_t tmp = std::pow(10, n);
+    return ((int64_t)(d * tmp)) / 1 * 1.0 / tmp;
+}
 void test1_1()
 {
     thread_local int i = 0;
@@ -66,7 +82,7 @@ void test1_1()
 
 void test2()
 {
-    std::mutex                   mutex;
+    std::mutex mutex;
     std::unique_lock<std::mutex> lock1(mutex);
     lock1.unlock();
     std::cout << "test2 ......" << std::endl;
@@ -86,10 +102,10 @@ bool IsOdd(int i)
     return i & 1;
 }
 
-void Print(const std::vector<int>& vec)
+void Print(const std::vector<int> &vec)
 {
     std::cout << "size: " << vec.size() << std::endl;
-    for (const auto& i : vec) {
+    for (const auto &i : vec) {
         std::cout << i << ' ';
     }
     std::cout << std::endl;
@@ -115,10 +131,11 @@ int test3_1()
     return 0;
 }
 
-class Student {
-  private:
+class Student
+{
+private:
     /* data */
-  public:
+public:
     Student(/* args */);
 
     ~Student();
@@ -185,8 +202,7 @@ void test3()
     // for (int n : q)
     //     std::cout << n << ' ';
 
-    typedef struct SS
-    {
+    typedef struct SS {
         int age;
         // SS(int age)
         // {
@@ -195,17 +211,17 @@ void test3()
         // }
     } SS;
     std::deque<SS> ss_q;
-    SS             s1;
+    SS s1;
     s1.age = 11;
     ss_q.push_back(s1);
     s1.age = 22;
     ss_q.push_back(s1);
 
-    for (auto& s : ss_q) {
+    for (auto &s : ss_q) {
         std::cout << s.age << std::endl;
     }
 }
-
+// std::atomic_int test_int;
 void test4()
 {
     // std::unordered_map<int, int> m;
@@ -355,13 +371,14 @@ void test4()
     // std::vector<int> v;
     // v.push_back(123);
 
-    std::deque<int> d;
-    d.push_back(1);
-    d.push_back(3);
-    d.push_back(2);
-    d.back();
-    std::sort(d.begin(), d.end(), [=](int a, int b) -> bool { return a > b; });
-    // for (auto n : d) {
+    // std::deque<int> d;
+    // d.push_back(1);
+    // d.push_back(3);
+    // d.push_back(2);
+    // d.back();
+    // std::sort(d.begin(), d.end(), [=](int a, int b) -> bool { return a > b;
+    // });
+    // // for (auto n : d) {
     //     std::cout << "n: " << n << std::endl;
     // }
 
@@ -382,7 +399,31 @@ void test4()
     //     std::cout << i << std::endl;
     // }
 
+    // std::vector<int> v;
+    // v.push_back(1);
+    // std::cout << v[2] << std::endl;
+
+    // int         i = 0;
+    // std::thread th =
+    //     std::thread([i]() -> void { std::cout << i << std::endl; });
+    // th.detach();
+
+    // std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+    // std::map<std::string, int> mm;
+    // auto i = mm.count("hello");
+    // std::cout << i << std::endl;
+
+    // std::cout << "Hello World!" << std::endl;
+
     std::vector<int> v;
+    v.push_back(3);
     v.push_back(1);
-    std::cout << v[2] << std::endl;
+    v.push_back(2);
+    std::sort(v.begin(), v.end(), [](int a, int b) -> bool {
+        return a > b;
+    });
+    for (int i = 0; i < v.size(); i++) {
+        std::cout << v[i] << std::endl;
+    }
 }

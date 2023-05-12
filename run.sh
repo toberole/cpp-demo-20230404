@@ -4,3 +4,6 @@ cd build
 cmake ./../
 make
 ./main
+
+# echo `cat main`
+# echo $(ls $(pwd))
