@@ -1,17 +1,29 @@
 #include "test1.h"
+#include <algorithm>
 #include <deque>
 #include <initializer_list>
 #include <iostream>
 #include <map>
 #include <utility>
+#include <vector>
 
 void test5()
 {
-    std::map<int, int> m;
-    m[1] = 0;
-    m[1]++;
-    m[1]++;
-    std::cout << "m[1]: " << m[1] << std::endl;
+    std::vector<int> v;
+    v.push_back(1);
+    v.push_back(3);
+    v.push_back(2);
+    std::sort(v.begin(), v.end(), [](int a, int b) {
+        return a > b;
+    });
+    for (int i = 0; i < v.size(); i++) {
+        std::cout << v[i] << std::endl;
+    }
+    // std::map<int, int> m;
+    // m[1] = 0;
+    // m[1]++;
+    // m[1]++;
+    // std::cout << "m[1]: " << m[1] << std::endl;
     // std::cout << "Hello Test5 ......" << std::endl;
     // std::deque<int> q1;
     // q1.push_back(1);
@@ -33,10 +45,10 @@ void test5()
     //     std::cout << "v: " << v << std::endl;
     // }
 
-    std::cout << "Hello World!" << std::endl;
-    std::cout << "" << std::endl;
+    // std::cout << "Hello World!" << std::endl;
+    // std::cout << "" << std::endl;
 
-    float f = 0.010517986;
-    f = ((int)(f * 100)) / 1 * 1.0f / 100;
-    std::cout << f << std::endl;
+    // float f = 0.010517986;
+    // f = ((int)(f * 100)) / 1 * 1.0f / 100;
+    // std::cout << f << std::endl;
 }

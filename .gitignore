@@ -6,10 +6,11 @@ nlohmann_json
 
 *.DS_Store
 .vscode
-logs
-.vs/
-out/
-CMakeSettings.json
-.vscode
-build
 .idea
+.vs/
+.DS_Store
+cmake-build-debug
+CMakeSettings.json
+logs
+out/
+build
