@@ -1,9 +1,5 @@
 cmake-build*
-
 nlohmann_json
-
-.idea
-
 *.DS_Store
 .vscode
 .idea

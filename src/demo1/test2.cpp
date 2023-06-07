@@ -1,3 +1,4 @@
+#include "Stu.h"
 #include "test1.h"
 #include <algorithm>
 #include <deque>
@@ -7,18 +8,53 @@
 #include <utility>
 #include <vector>
 
+void test6(int &i)
+{
+    std::cout << i++ << std::endl;
+}
+
+float cal()
+{
+    std::cout << "cal ......" << std::endl;
+    return std::acos(-1);
+}
+
+void test5_1()
+{
+    static float j = cal();
+    std::cout << "test5_1 ...... " << j << std::endl;
+}
+
 void test5()
 {
-    std::vector<int> v;
-    v.push_back(1);
-    v.push_back(3);
-    v.push_back(2);
-    std::sort(v.begin(), v.end(), [](int a, int b) {
-        return a > b;
-    });
-    for (int i = 0; i < v.size(); i++) {
-        std::cout << v[i] << std::endl;
-    }
+    std::cout << sizeof(short) << std::endl;
+    std::cout << sizeof(int) << std::endl;
+    std::cout << sizeof(float) << std::endl;
+    std::cout << sizeof(double) << std::endl;
+    std::cout << sizeof(long) << std::endl;
+    // std::cout << sizeof(float) << std::endl;
+    // Stu s;
+    // std::vector<Stu> v;
+    // v.push_back(s);
+    // std::cout << 1e3 << std::endl;
+    // std::string fileName =
+    //     (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__);
+    // std::cout << fileName << std::endl;
+    // auto pi = std::acos(-1);
+    // std::cout << pi << std::endl;
+    // test5_1();
+    // test5_1();
+    // std::vector<int> v;
+    // v.push_back(1);
+    // v.push_back(3);
+    // v.push_back(2);
+    // std::sort(v.begin(), v.end(), [](int a, int b) {
+    //     // return a > b;
+    //     return a < b;
+    // });
+    // for (int i = 0; i < v.size(); i++) {
+    //     std::cout << v[i] << std::endl;
+    // }
     // std::map<int, int> m;
     // m[1] = 0;
     // m[1]++;
