@@ -27,11 +27,22 @@ void test5_1()
 
 void test5()
 {
-    std::cout << sizeof(short) << std::endl;
-    std::cout << sizeof(int) << std::endl;
-    std::cout << sizeof(float) << std::endl;
-    std::cout << sizeof(double) << std::endl;
-    std::cout << sizeof(long) << std::endl;
+    // int arr[] = {1, 2, 3, 4, 5};
+    // std::cout << sizeof(arr) << std::endl;
+    // char *p = "Helloworld!";
+    // std::cout << sizeof(p) << std::endl;
+    // typedef enum Test {
+    //     a,
+    //     b,
+    //     c,
+    // } Test;
+    // Test a1 = a;
+    // int a2 = a1;
+    // std::cout << sizeof(short) << std::endl;
+    // std::cout << sizeof(int) << std::endl;
+    // std::cout << sizeof(float) << std::endl;
+    // std::cout << sizeof(double) << std::endl;
+    // std::cout << sizeof(long) << std::endl;
     // std::cout << sizeof(float) << std::endl;
     // Stu s;
     // std::vector<Stu> v;
