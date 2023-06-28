@@ -5,18 +5,20 @@
 #include <iostream>
 #include <thread>
 #include <vector>
+#include "FileUtil.hpp"
 
 extern int Test_static_i;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
     std::cout << "Hello World!" << std::endl;
     // test1();
     // test2();
     // test3();
     // test4();
-    test5();
+//    test5();
     // std::this_thread::sleep_for(std::chrono::milliseconds(5000));
     // std::cout << LOG_TAG << std::endl;
+    int ret  = createDirectory("/1/2/3/");
+    std::cout<<ret<<std::endl;
     return 0;
 }

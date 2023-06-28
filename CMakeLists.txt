@@ -9,6 +9,7 @@ include(./cmake/deps.cmake)
 include_directories(${CMAKE_CURRENT_LIST_DIR})
 include_directories(${CMAKE_CURRENT_LIST_DIR}/src)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/src/demo1)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/src/util)
 
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/src SRC_DIR)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/src/demo1 SRC_DIR)

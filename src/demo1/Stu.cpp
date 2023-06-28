@@ -11,7 +11,7 @@ Stu::~Stu()
     std::cout << "~Stu" << std::endl;
 }
 
-Stu::Stu(const Stu &s)
+Stu::Stu(const Stu &&s)
 {
     std::cout << "move Stu" << std::endl;
 }
